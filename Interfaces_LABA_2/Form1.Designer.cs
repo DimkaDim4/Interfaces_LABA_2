@@ -50,7 +50,7 @@ namespace Interfaces_LABA_2
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(819, 41);
+            this.dataGridView1.Location = new System.Drawing.Point(979, 32);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -59,7 +59,7 @@ namespace Interfaces_LABA_2
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(1039, 386);
+            this.addButton.Location = new System.Drawing.Point(1199, 377);
             this.addButton.Margin = new System.Windows.Forms.Padding(4);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(100, 28);
@@ -84,7 +84,7 @@ namespace Interfaces_LABA_2
             series1.XValueMember = "X";
             series1.YValueMembers = "Y";
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(456, 369);
+            this.chart1.Size = new System.Drawing.Size(616, 369);
             this.chart1.TabIndex = 2;
             this.chart1.Text = "chart1";
             // 
@@ -95,7 +95,7 @@ namespace Interfaces_LABA_2
             "Draw as lines",
             "Draw as spline",
             "Draw as point"});
-            this.comboBox1.Location = new System.Drawing.Point(819, 386);
+            this.comboBox1.Location = new System.Drawing.Point(979, 376);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 5;
@@ -108,7 +108,7 @@ namespace Interfaces_LABA_2
             this.файлToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1158, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1299, 28);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -149,7 +149,7 @@ namespace Interfaces_LABA_2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1158, 453);
+            this.ClientSize = new System.Drawing.Size(1299, 423);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.chart1);

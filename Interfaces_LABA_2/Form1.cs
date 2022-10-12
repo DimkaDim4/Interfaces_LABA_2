@@ -24,6 +24,7 @@ namespace Interfaces_LABA_2
             InitializeComponent();
             comboBox1.SelectedIndex = 0;
             chart1.Series.Clear();
+            chart1.Legends.Clear();
         }
 
         private void Data_ListChanged(object sender, ListChangedEventArgs e)
@@ -68,6 +69,11 @@ namespace Interfaces_LABA_2
             openFileDialog.Filter = "Text files (*.txt)|*.txt";
             openFileDialog.ShowDialog();
 
+            if (openFileDialog.FileName == "")
+            {
+                return;
+            }
+
             var s = File.ReadAllLines(openFileDialog.FileName);
 
             Random r = new Random();
@@ -84,11 +90,20 @@ namespace Interfaces_LABA_2
             file.Data.ListChanged += Data_ListChanged;
             Files.Add(file);
 
+            if (chart1.Legends.Count == 0)
+            {
+                Legend legend = new Legend("Legend1");
+                legend.LegendStyle = LegendStyle.Column;
+                legend.Docking = Docking.Bottom;
+                chart1.Legends.Add(legend);
+            }
+
             Series series = new Series();
-            series.LegendText = file.FileName;
             series.Color = file.Color;
             series.Points.DataBind(file.Data.List, "X", "Y", "");
             series.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series.Legend = "Legend1";
+            series.LegendText = file.FileName;
             chart1.Series.Add(series);
 
             checkedListBox1.Items.Add(file.FileName, true);
@@ -101,13 +116,18 @@ namespace Interfaces_LABA_2
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Text files (*.txt)|*.txt";
             saveFileDialog.ShowDialog();
-            
+
+            if (saveFileDialog.FileName == "")
+            {
+                return;
+            }
+
             var file = new StreamWriter(saveFileDialog.FileName);
             foreach (Data point in Files[checkedListBox1.SelectedIndex].Data)
             {
                 file.WriteLine($"{point.X}\t{point.Y}");
             }
-            file.Close();      
+            file.Close();  
         }
 
         private void checkedListBox1_SelectedValueChanged(object sender, EventArgs e)
